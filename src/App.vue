@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding: 10rem;">
     <LikeHeader>
       <h3>はじめまして</h3>
     </LikeHeader>
@@ -96,7 +96,4 @@ export default {
 </script>
 
 <style scoped>
-div {
-  border: 1px solid red;
-}
 </style>
