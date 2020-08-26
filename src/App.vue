@@ -1,5 +1,5 @@
 <template>
-  <div style="padding: 10rem;">
+  <div class="main">
     <LikeHeader>
       <h3>はじめまして</h3>
     </LikeHeader>
@@ -59,6 +59,8 @@
       </select>
       <p>{{ eventData.location }}</p>
     </div>
+
+    <HomeSecond></HomeSecond>
   </div>
 </template>
 
@@ -67,6 +69,7 @@ import LikeHeader from "./components/LikeHeader.vue";
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import EventTitle from "./components/EventTitle.vue";
+import HomeSecond from "@/components/HomeSecond.vue";
 
 export default {
   data() {
@@ -91,9 +94,16 @@ export default {
     Home,
     About,
     EventTitle,
+    HomeSecond,
   },
 };
 </script>
 
 <style scoped>
+.main {
+  width: 70%;
+  margin: auto;
+  padding: 5rem;
+  text-align: center;
+}
 </style>
