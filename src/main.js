@@ -9,10 +9,17 @@ Vue.component("LikeNumber", LikeNumber);
 Vue.filter("upperCase", function(value) {
   return value.toUpperCase();
 });
-Vue.mixin({
-  created() {
-    console.log("global mixin");
-  },
+// Vue.mixin({
+//   created() {
+//     console.log("global mixin");
+//   },
+// });
+
+router.beforeEach((to, from, next) => {
+  if (to.path === "/users/1") {
+    next("/");
+  }
+  next();
 });
 
 new Vue({

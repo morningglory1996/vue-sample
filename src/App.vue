@@ -1,23 +1,29 @@
 <template>
   <div style="width: 700px; margin: auto; padding-top: 50px;">
-    <nav>
-      <router-link to="/" active-class="link-active" exact class="link"
-        >Home</router-link
-      >
-      <router-link to="/users" active-class="link-active" exact class="link"
-        >Users</router-link
-      >
-    </nav>
-    <router-view></router-view>
+    <router-view name="header"></router-view>
+    <transition name="fade" mode="out-in" @before-enter="beforeEnter">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
-<style scoped>
-.link {
-  margin-right: 10px;
-}
+<script>
+export default {
+  methods: {
+    beforeEnter() {
+      this.$root.$emit("triggerScroll");
+    },
+  },
+};
+</script>
 
-.link-active {
-  font-size: 20px;
+<style scoped>
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
 </style>
